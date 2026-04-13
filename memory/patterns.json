@@ -1,0 +1,14 @@
+{
+  "reviews": [
+    {
+      "url": "https://github.com/pallets/flask",
+      "date": "2026-04-13T23:34:22.445131",
+      "issue_count": 4
+    }
+  ],
+  "patterns": {
+    "SQL_INJECTION": 3,
+    "BARE_EXCEPT": 1
+  },
+  "total_issues": 4
+}
