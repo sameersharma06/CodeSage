@@ -180,6 +180,10 @@ def review_repo(github_url: str) -> dict:
         rule_hits = run_rules(filename, code)
 
         for hit in rule_hits:
+            # ✅ SMART FILTERING (REMOVE LOW NOISE ONLY IF OTHER ISSUES EXIST)
+            if hit.get("severity") == "LOW" and len(rule_hits) > 1:
+                continue
+
             hit["filename"] = filename
             hit["source"] = "RULE"
             hit = add_confidence(hit)

@@ -4,11 +4,34 @@
       "url": "https://github.com/pallets/flask",
       "date": "2026-04-13T23:34:22.445131",
       "issue_count": 4
+    },
+    {
+      "url": "https://github.com/pallets/flask",
+      "date": "2026-04-13T23:45:17.686728",
+      "issue_count": 4
+    },
+    {
+      "url": "https://github.com/pallets/flask",
+      "date": "2026-04-13T23:53:34.222654",
+      "issue_count": 4
+    },
+    {
+      "url": "https://github.com/sameersharma06/CodeSage",
+      "date": "2026-04-14T00:05:28.278395",
+      "issue_count": 24
+    },
+    {
+      "url": "https://github.com/sameersharma06/CodeSage",
+      "date": "2026-04-14T00:37:46.110694",
+      "issue_count": 5
     }
   ],
   "patterns": {
-    "SQL_INJECTION": 3,
-    "BARE_EXCEPT": 1
+    "SQL_INJECTION": 9,
+    "BARE_EXCEPT": 7,
+    "DIV_BY_ZERO": 2,
+    "NO_CONTEXT_MANAGER": 4,
+    "PRINT_DEBUG": 19
   },
-  "total_issues": 4
+  "total_issues": 41
 }
