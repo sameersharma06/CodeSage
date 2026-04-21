@@ -1,4 +1,19 @@
-models/
+# Node
+node_modules/
+dist/
+build/
+*.log
+
+# Website specific
+website/node_modules/
+website/dist/
+website/.env
+
+# Python
 __pycache__/
-.env
 *.pyc
+venv/
+.env
+
+# Mac
+.DS_Store

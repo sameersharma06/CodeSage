@@ -1,0 +1,137 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ---------------- BASE ---------------- */
+
+:root {
+  color-scheme: dark;
+}
+
+html {
+  scroll-behavior: auto;
+}
+
+body {
+  font-family: "Inter", system-ui, sans-serif;
+  background: #000000;
+  color: #ffffff;
+  overflow-x: hidden;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+::selection {
+  background: rgba(0, 255, 255, 0.2);
+  color: #ffffff;
+}
+
+/* ---------------- LENIS ---------------- */
+
+html.lenis,
+html.lenis body {
+  height: auto;
+}
+
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+
+/* ---------------- COMPONENTS ---------------- */
+
+@layer components {
+  .section-header {
+    @apply font-space text-5xl md:text-7xl xl:text-8xl tracking-[-0.05em] leading-[0.92];
+  }
+
+  .section-subtext {
+    @apply text-zinc-400 text-lg md:text-xl leading-relaxed max-w-2xl;
+  }
+
+  .neon-button {
+    @apply relative inline-flex items-center justify-center px-8 py-4 text-base md:text-lg font-medium rounded-2xl border border-neon-blue text-neon-blue transition-all duration-300;
+  }
+
+  .neon-button:hover {
+    @apply bg-neon-blue text-black;
+    box-shadow: 0 0 28px rgba(0, 255, 255, 0.28);
+  }
+
+  .neon-button:active {
+    transform: scale(0.97);
+  }
+
+  .glass {
+    @apply rounded-3xl border border-white/10 bg-white/[0.04];
+    backdrop-filter: blur(24px);
+  }
+
+  .cinematic-section {
+    @apply py-28 md:py-40;
+  }
+
+  .fade-divider {
+    @apply h-px w-full bg-gradient-to-r from-transparent via-white/10 to-transparent;
+  }
+}
+
+/* ---------------- PERFORMANCE ---------------- */
+
+section,
+img,
+video,
+.glass,
+.pipeline-step {
+  transform: translateZ(0);
+  will-change: transform, opacity;
+  backface-visibility: hidden;
+}
+
+/* ---------------- SCROLLBAR ---------------- */
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #050505;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.14);
+  border-radius: 999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.22);
+}
+
+/* ---------------- MOBILE ---------------- */
+
+@media (max-width: 768px) {
+  .section-header {
+    font-size: 3rem;
+    line-height: 0.95;
+  }
+
+  .cinematic-section {
+    padding-top: 6rem;
+    padding-bottom: 6rem;
+  }
+
+  .pipeline-step,
+  .glass {
+    will-change: transform, opacity;
+  }
+}
