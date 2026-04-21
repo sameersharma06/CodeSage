@@ -1,16 +1,86 @@
-# React + Vite
+# CodeSage ⚡
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+**Your Code. Your Machine. Your Power.**
 
-Currently, two official plugins are available:
+Senior-level code reviews that run **100% locally**.  
+No cloud. No API keys. No data ever leaves your Mac.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+![Hero](https://github.com/sameersharma06/CodeSage/raw/main/website/dist/assets/hero.png) <!-- We'll update this later -->
 
-## React Compiler
+## Why CodeSage
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+Most AI coding tools send your code to the cloud.  
+CodeSage brings the senior engineer to **your machine**.
 
-## Expanding the ESLint configuration
+| Feature                    | Cursor / Copilot / GitHub Copilot | CodeSage ⚡ |
+|---------------------------|-----------------------------------|-------------|
+| Runs 100% locally         | ❌                                | ✅          |
+| Code stays completely private | ❌                            | ✅          |
+| No API keys or billing    | ❌                                | ✅          |
+| Works fully offline       | ❌                                | ✅          |
+| Free forever              | ❌                                | ✅          |
+| Exact file + line numbers | Sometimes                         | ✅          |
+| Deterministic rule engine | ❌                                | ✅          |
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## What It Does
+
+Paste any GitHub repo URL → CodeSage reviews it like a senior engineer.
+
+- Finds bugs, security vulnerabilities, performance bottlenecks
+- Gives **exact file names + line numbers**
+- Combines deterministic rules + local AI models
+- Everything runs on your Apple Silicon with MLX
+
+## How It Works
+
+```mermaid
+flowchart TD
+    A[GitHub Repo URL] --> B[Ingestion + Parsing]
+    B --> C[Rule Engine<br/>Deterministic Checks]
+    C --> D[Fast Pass<br/>Qwen2.5-Coder-1.5B]
+    D --> E[Deep Pass<br/>DeepSeek-Coder-6.7B]
+    E --> F[Structured Report + Memory]
+
+Ingestion — Clones and parses the repository
+Rule Engine — AST + regex for security, bugs, and anti-patterns
+Fast Pass — Quick scan with Qwen2.5-Coder-1.5B
+Deep Pass — Detailed analysis with DeepSeek-Coder-6.7B (4-bit)
+Memory — Learns patterns across reviews (local JSON)
+
+Quick Start
+Bashgit clone https://github.com/sameersharma06/CodeSage.git
+cd CodeSage
+
+# Backend
+python3 -m venv venv
+source venv/bin/activate
+pip install -r requirements.txt
+python -m api.main
+Open http://localhost:8000
+Models (~4GB) will download automatically on first run.
+Requirements:
+
+macOS (Apple Silicon strongly recommended)
+Python 3.10+
+8GB RAM minimum (16GB+ recommended)
+Git
+
+Performance
+
+80-file repo reviewed in ~3 minutes on M-series Mac
+Peak RAM usage: ~7GB
+Zero cloud cost. Zero latency after model load.
+
+Tech Stack
+
+Models: Qwen2.5-Coder-1.5B + DeepSeek-Coder-6.7B-4bit
+Inference: MLX (Apple Silicon optimized)
+Backend: FastAPI
+Rule Engine: AST + regex (never hallucinates)
+Frontend: Cinematic React + Tailwind + Framer Motion + GSAP
+Memory: Local JSON pattern store
+
+Built With ❤️ by
+Sameer Sharma
+First-year CS & AI student from Haryana, India.
+Building sovereign AI systems that run on your machine.
